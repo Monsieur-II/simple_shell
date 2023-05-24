@@ -22,6 +22,7 @@ int main(int argc __attribute__((unused)), char **argv)
 			write(STDOUT_FILENO, "$ ", 2);
 
 		read_input(&line_read, &n);
+		counter++;
 		tokenize(line_read, args, MAX_ARGS, "\n ");
 
 		if (args[0] == NULL)
@@ -29,7 +30,6 @@ int main(int argc __attribute__((unused)), char **argv)
 			_free(&line_read);
 			continue;
 		}
-		counter++;
 
 		if (built_in(&line_read, args) == 0)
 			continue;
