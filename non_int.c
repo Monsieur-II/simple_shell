@@ -15,6 +15,7 @@ void non_int(char **argv, char *line_read, char **args,
 		char *command_path, size_t n)
 {
 	int counter = 0;
+	int status = 0;
 
 	if (!(isatty(STDIN_FILENO)))
 	{
@@ -37,7 +38,10 @@ void non_int(char **argv, char *line_read, char **args,
 			command_path = find_command(args);
 
 			if (command_path == NULL)
+			{
 				p_error(argv[0], args[0], counter);
+				status = 127;
+			}
 
 			else
 			{
@@ -46,6 +50,6 @@ void non_int(char **argv, char *line_read, char **args,
 			}
 		}
 		_free(&line_read);
-		exit(EXIT_SUCCESS);
+		exit(status);
 	}
 }
