@@ -28,5 +28,10 @@ The following built-ins are implemented:
 * closedir (man 3 closedir)
 * execve (man 2 execve)
 * exit (man 3 exit)
-
+* _exit (man 2 _exit)
+* fflush (man 3 fflush)
+* fork (man 2 fork)
+* free (man 3 free)
+* getcwd (man 3 getcwd)
+* getline (man 3 getline)
 
