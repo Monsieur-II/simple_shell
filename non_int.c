@@ -19,31 +19,31 @@ void non_int(char **argv, char *line_read, char **args,
 	if (!(isatty(STDIN_FILENO)))
 	{
 
-		while (getline(&line_read, &n, stdin) != -1)
+		while (_getline(&line_read, &n, STDIN_FILENO) != -1)
 		{
 
-		tokenize(line_read, args, MAX_ARGS, "\n\t ");
+			tokenize(line_read, args, MAX_ARGS, "\n\t ");
 
-		if (args[0] == NULL)
-		{
-			_free(&line_read);
-			exit(EXIT_SUCCESS);
-		}
-		counter++;
+			if (args[0] == NULL)
+			{
+				_free(&line_read);
+				exit(EXIT_SUCCESS);
+			}
+			counter++;
 
-		if (built_in(&line_read, args) == 0)
-			exit(EXIT_SUCCESS);
+			if (built_in(&line_read, args) == 0)
+				exit(EXIT_SUCCESS);
 
-		command_path = find_command(args);
+			command_path = find_command(args);
 
-		if (command_path == NULL)
-			p_error(argv[0], args[0], counter);
+			if (command_path == NULL)
+				p_error(argv[0], args[0], counter);
 
-		else
-		{
-			execute_command(command_path, args);
-			free(command_path);
-		}
+			else
+			{
+				execute_command(command_path, args);
+				free(command_path);
+			}
 		}
 		_free(&line_read);
 		exit(EXIT_SUCCESS);

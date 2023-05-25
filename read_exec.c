@@ -10,7 +10,7 @@
 
 void read_input(char **line_read, size_t *n)
 {
-	if (getline(line_read, n, stdin) == -1)
+	if (_getline(line_read, n, STDIN_FILENO) == -1)
 	{
 		_free(line_read);
 		write(STDOUT_FILENO, "\n", 1);
