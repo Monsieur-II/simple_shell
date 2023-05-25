@@ -19,7 +19,7 @@ void non_int(char **argv, char *line_read, char **args,
 	if (!(isatty(STDIN_FILENO)))
 	{
 
-		while (_getline(&line_read, &n, STDIN_FILENO) != -1)
+		while (getline(&line_read, &n, stdin) != -1)
 		{
 
 			tokenize(line_read, args, MAX_ARGS, "\n\t ");
