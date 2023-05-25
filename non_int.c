@@ -19,7 +19,9 @@ void non_int(char **argv, char *line_read, char **args,
 	if (!(isatty(STDIN_FILENO)))
 	{
 
-		read_input(&line_read, &n);
+		while (getline(&line_read, &n, stdin) != -1)
+		{
+
 		tokenize(line_read, args, MAX_ARGS, "\n ");
 
 		if (args[0] == NULL)
@@ -41,6 +43,7 @@ void non_int(char **argv, char *line_read, char **args,
 		{
 			execute_command(command_path, args);
 			free(command_path);
+		}
 		}
 		_free(&line_read);
 		exit(EXIT_SUCCESS);
