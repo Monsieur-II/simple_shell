@@ -10,7 +10,7 @@ The shell is able to interpret and execute command line arguments from the user 
 ## Usage
 All files are compiled on Ubuntu 20.04 LTS using:
 ```
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh.
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 ```
 
 * The shell works in both interactive and non-interactive modes.
