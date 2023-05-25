@@ -3,6 +3,7 @@ A simple shell group project done by [@Monsieur-II](https://github.com/Monsieur-
 
 ## Synopsis
 This is a simple implementation of a UNIX command interpreter.
+Not a perfect shell but is able to execute basic commands.
 
 ## Description
 The shell is able to interpret and execute command line arguments from the user through the Standard input. It reads a given line, breaks it into separate arguments and executes accordingly. This shell behaves like the `/bin/sh` shell in terms of output.
