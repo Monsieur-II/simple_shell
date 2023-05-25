@@ -20,3 +20,13 @@ The following built-ins are implemented:
 * `exit` - Exits the shell with an exit status of 0.
 * `env` - Prints the current environment.
 
+
+## List of allowed functions and system calls
+* access (man 2 access)
+* chdir (man 2 chdir)
+* close (man 2 close)
+* closedir (man 3 closedir)
+* execve (man 2 execve)
+* exit (man 3 exit)
+
+
