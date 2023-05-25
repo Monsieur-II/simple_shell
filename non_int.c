@@ -22,7 +22,7 @@ void non_int(char **argv, char *line_read, char **args,
 		while (getline(&line_read, &n, stdin) != -1)
 		{
 
-		tokenize(line_read, args, MAX_ARGS, "\n ");
+		tokenize(line_read, args, MAX_ARGS, "\n\t ");
 
 		if (args[0] == NULL)
 		{

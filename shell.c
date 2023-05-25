@@ -23,7 +23,7 @@ int main(int argc __attribute__((unused)), char **argv)
 
 		read_input(&line_read, &n);
 		counter++;
-		tokenize(line_read, args, MAX_ARGS, "\n ");
+		tokenize(line_read, args, MAX_ARGS, "\n\t ");
 
 		if (args[0] == NULL)
 		{
