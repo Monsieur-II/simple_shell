@@ -21,9 +21,10 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
 -   The shell works in both interactive and non-interactive modes.
 
-## Handlers
+-   Handles shell variable replacement (including the `$?` and `$$` variables).
 
--   Handles shell variable replacement (including the `$?` and `$$` variables)
+-   The shell is able to take a file as input.
+    -   Usage: `hsh [filename]`
 
 ## Built-Ins
 
