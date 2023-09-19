@@ -1,9 +1,63 @@
-The Simple Shell, an elegant UNIX command language interpreter, is a marvel of C implementation. With its ability to read commands from either a file or standard input, it offers a seamless user experience.
+# Simple Shell Project
 
-To ensure the highest standards of excellence, our team has compiled all files on Ubuntu 20.04 LTS using gcc with the options -Wall -Werror -Wextra -pedantic -std=gnu89. Our files are formatted with care to meet the Betty style, and all header files are include guarded.
+A simple shell group project done by [@Monsieur-II](https://github.com/Monsieur-II) and [@Jennie547](https://github.com/Jennie547).
 
-Our shell is designed to be sophisticated yet intuitive, taking the user through the process with ease. The child process created to investigate the command is meticulous in its search for built-ins, aliases in the PATH, and local executable programs.
+## Synopsis
 
-The command itself, accepting arguments with grace, will replace the child process, and when it completes its task, the program shall return to the parent process and print the prompt. This flawless feature allows the program to be enhanced and used repeatedly.
+This is a simple implementation of a UNIX command interpreter.
+Not a perfect shell but is able to execute basic commands(ls, cat, cp, mv, echo etc...)
 
-With the Simple Shell, every command is given the attention, honor, and respect it deserves. Even the non-interactive mode works seamlessly, and exiting the shell itself is elegantly designed. Pressing Ctrl-D or entering "exit" with or without a status will exit the program correctly.
+## Description
+
+The shell is able to interpret and execute command line arguments from the user through the Standard input. It reads a given line, breaks it into separate arguments and executes accordingly. This shell behaves like the `/bin/sh` shell in terms of output.
+
+## Usage
+
+All files are compiled on Ubuntu 20.04 LTS using:
+
+```
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+```
+
+-   The shell works in both interactive and non-interactive modes.
+
+## Built-Ins
+
+The following built-ins are implemented:
+
+-   `exit` `[status]` - Exits the shell with an exit status of `status`.
+-   `env` - Prints the current environment.
+
+## List of allowed functions and system calls
+
+-   access (man 2 access)
+-   chdir (man 2 chdir)
+-   close (man 2 close)
+-   closedir (man 3 closedir)
+-   execve (man 2 execve)
+-   exit (man 3 exit)
+-   \_exit (man 2 \_exit)
+-   fflush (man 3 fflush)
+-   fork (man 2 fork)
+-   free (man 3 free)
+-   getcwd (man 3 getcwd)
+-   getline (man 3 getline)
+-   getpid (man 2 getpid)
+-   isatty (man 3 isatty)
+-   kill (man 2 kill)
+-   malloc (man 3 malloc)
+-   open (man 2 open)
+-   opendir (man 3 opendir)
+-   perror (man 3 perror)
+-   read (man 2 read)
+-   readdir (man 3 readdir)
+-   signal (man 2 signal)
+-   stat (\_\_xstat) (man 2 stat)
+-   lstat (\_\_lxstat) (man 2 lstat)
+-   fstat (\_\_fxstat) (man 2 fstat)
+-   strtok (man 3 strtok)
+-   wait (man 2 wait)
+-   waitpid (man 2 waitpid)
+-   wait3 (man 2 wait3)
+-   wait4 (man 2 wait4)
+-   write (man 2 write)
