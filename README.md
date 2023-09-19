@@ -21,6 +21,10 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
 -   The shell works in both interactive and non-interactive modes.
 
+## Handlers
+
+-   Handles shell variable replacement (including the `$?` and `$$` variables)
+
 ## Built-Ins
 
 The following built-ins are implemented:
