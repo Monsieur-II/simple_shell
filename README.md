@@ -5,7 +5,7 @@ A simple shell group project done by [@Monsieur-II](https://github.com/Monsieur-
 ## Synopsis
 
 This is a simple implementation of a UNIX command interpreter.
-Not a perfect shell but is able to execute basic commands(ls, cat, cp, mv, echo etc...)
+Not a perfect shell but is able to execute basic commands(ls, cat, cp, mv, echo etc...).
 
 ## Description
 
