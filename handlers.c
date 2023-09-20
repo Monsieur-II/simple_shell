@@ -14,7 +14,7 @@ void handle_comment(char *s)
 	{
 		if (s[i] == '#')
 		{
-			if ((i == 0) || (i != 0 && (s[i - 1] != ' ')))
+			if ((i == 0) || (i != 0 && (s[i - 1] == ' ')))
 			{
 				for (j = i; s[j]; j++)
 					s[j] = '\0';
