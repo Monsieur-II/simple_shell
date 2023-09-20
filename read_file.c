@@ -22,7 +22,7 @@ void read_file(char **argv, char *line_read, char **args,
 	if (!file)
 	{
 		file_error(argv, counter);
-		exit(EXIT_FAILURE);
+		exit(127);
 	}
 	while (getline(&line_read, &n, file) != -1)
 	{
@@ -31,11 +31,10 @@ void read_file(char **argv, char *line_read, char **args,
 		if (args[0] == NULL)
 		{
 			_free(&line_read);
-			exit(EXIT_SUCCESS);
+			continue;
 		}
 		counter++;
 		handle_dollar(args, status, str);
-
 		if (built_in(&line_read, args, argv, &status, counter) == 0)
 			continue;
 
@@ -50,6 +49,7 @@ void read_file(char **argv, char *line_read, char **args,
 			status = execute_command(command_path, args);
 			free(command_path);
 		}
+		_free(&line_read);
 	}
 	_free(&line_read);
 	fclose(file);

@@ -20,7 +20,7 @@ void exit_shell(char **line_read, char **args, char **argv,
 	if (args[1] == NULL)
 	{
 		_free(line_read);
-		exit(EXIT_SUCCESS);
+		exit(*status);
 	}
 
 	else if (check_digit(args[1]) == 0)

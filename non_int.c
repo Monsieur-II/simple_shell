@@ -28,7 +28,7 @@ void non_int(char **argv, char *line_read, char **args,
 			if (args[0] == NULL)
 			{
 				_free(&line_read);
-				exit(EXIT_SUCCESS);
+				continue;
 			}
 			counter++;
 
@@ -44,12 +44,12 @@ void non_int(char **argv, char *line_read, char **args,
 				p_error(argv[0], args[0], counter);
 				status = 127;
 			}
-
 			else
 			{
 				status = execute_command(command_path, args);
 				free(command_path);
 			}
+			_free(&line_read);
 		}
 		_free(&line_read);
 		exit(status);

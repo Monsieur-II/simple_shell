@@ -14,10 +14,13 @@ void handle_comment(char *s)
 	{
 		if (s[i] == '#')
 		{
-			for (j = i; s[j]; j++)
-				s[j] = '\0';
+			if ((i == 0) || (i != 0 && (s[i - 1] != ' ')))
+			{
+				for (j = i; s[j]; j++)
+					s[j] = '\0';
 
-			return;
+				return;
+			}
 		}
 		i++;
 	}
@@ -68,7 +71,6 @@ void handle_dollar(char **args, int status, char *str)
 				args[i] = str;
 				return;
 			}
-
 			else if (_strcmp(args[i], "$$") == 0)
 			{
 				j = (int)getpid();
@@ -76,7 +78,6 @@ void handle_dollar(char **args, int status, char *str)
 				args[i] = str;
 				return;
 			}
-
 			else
 			{
 				ptr++;
@@ -89,6 +90,8 @@ void handle_dollar(char **args, int status, char *str)
 					free(path);
 					return;
 				}
+				else
+					args[i] = "";
 			}
 		}
 	}
